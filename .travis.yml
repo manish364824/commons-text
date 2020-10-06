@@ -18,6 +18,11 @@ arch:
  - ppc64le
 language: java
 
+addons:
+  apt:
+    packages:
+    - maven
+
 jdk:
   - openjdk8
   - openjdk11
@@ -29,11 +34,7 @@ matrix:
   allow_failures:
     - jdk: openjdk-ea
     
-before_script:
-  - |
-     if [[ "$TRAVIS_CPU_ARCH" == "ppc64le" ]]; then
-       sudo apt install maven
-     fi
+
 script:
   - mvn -V --no-transfer-progress
 

@@ -36,6 +36,7 @@ matrix:
     - jdk: openjdk-ea
     
 
+
 script:
   - mvn -V --no-transfer-progress
 

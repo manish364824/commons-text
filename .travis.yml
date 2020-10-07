@@ -28,11 +28,11 @@ jdk:
   - openjdk14
   - openjdk-ea
   
-before_install: 
-  - mkdir -p /opt/maven
-  - curl https://downloads.apache.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
-  - export MAVEN_HOME=/opt/maven
-  - export PATH=${MAVEN_HOME}/bin:${PATH}
+addons:
+  apt:
+    packages:
+    - maven
+    update: true
 
 matrix:
   allow_failures:

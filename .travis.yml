@@ -19,6 +19,7 @@ arch:
  - ppc64le
 language: java
 
+
   apt:
     packages:
     - maven

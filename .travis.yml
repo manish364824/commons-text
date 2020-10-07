@@ -24,8 +24,6 @@ language: java
     - maven
     update: true
     
-    
-
 jdk:
   - openjdk8
   - openjdk11

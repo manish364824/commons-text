@@ -18,10 +18,10 @@ arch:
  - ppc64le
 language: java
 
-addons:
   apt:
     packages:
     - maven
+    update: true
 
 jdk:
   - openjdk8

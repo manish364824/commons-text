@@ -26,6 +26,13 @@ jdk:
   - openjdk14
   - openjdk-ea
   
+  
+addons:
+  apt:
+    packages:
+    - maven
+    update: true
+  
 before_install: 
         - mkdir -p /opt/maven
         - curl https://downloads.apache.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz%7Ctar -xz --strip 1 -C /opt/maven

@@ -30,6 +30,7 @@ addons:
   apt:
     packages:
       - openjdk-8-source
+      - openjdk-11-source
       - maven
         
 matrix:

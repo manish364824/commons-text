@@ -26,6 +26,11 @@ jdk:
   - openjdk14
   - openjdk-ea
   
+addons:
+  apt:
+    packages:
+        - maven
+        
 matrix:
   allow_failures:
     - jdk: openjdk-ea

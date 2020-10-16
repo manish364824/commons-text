@@ -29,7 +29,8 @@ jdk:
 addons:
   apt:
     packages:
-        - maven
+      - openjdk-8-source
+      - maven
         
 matrix:
   allow_failures:

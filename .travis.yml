@@ -22,12 +22,6 @@ jdk:
   - openjdk14
   - openjdk-ea
   
-addons:
-  apt:
-    packages:
-      - openjdk-8-source
-      - maven
-        
 matrix:
   include:
     - arch: ppc64le

@@ -26,12 +26,14 @@ matrix:
   include:
     - arch: ppc64le
       jdk: openjdk8
-      before_install:
-        - sudo apt-get install maven
+      addons:
+        apt:
+          packages: maven
     - arch: ppc64le
       jdk: openjdk11
-      before_install:
-        - sudo apt-get install maven
+      addons:
+        apt:
+          packages: maven
       
   
   allow_failures:

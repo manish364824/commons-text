@@ -11,12 +11,8 @@
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
-# limitations under the License.
+# limitations under the License
 
-arch:
- - amd64
- - ppc64le
- 
 language: java
     
 jdk:
@@ -33,6 +29,17 @@ addons:
       - maven
         
 matrix:
+  include:
+    - arch: ppc64le
+      jdk: openjdk8
+      before_install:
+        - sudo apt-get install maven
+    - arch: ppc64le
+      jdk: openjdk11
+      before_install:
+        - sudo apt-get install maven
+      
+  
   allow_failures:
     - jdk: openjdk-ea
     

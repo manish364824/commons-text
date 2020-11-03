@@ -26,15 +26,22 @@ matrix:
   include:
     - arch: ppc64le
       jdk: openjdk8
-      addons:
-        apt:
-          packages: maven
+      before_script:
+        - cd /opt
+        - wget http://apache.mirrors.pair.com/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
+        - sudo tar -xvzf apache-maven-3.6.3-bin.tar.gz
+        - sudo mv apache-maven-3.6.3 maven
+        - export M2_HOME=/opt/maven
+        - export PATH=${M2_HOME}/bin:${PATH}
     - arch: ppc64le
       jdk: openjdk11
-      addons:
-        apt:
-          packages: maven
-      
+      before_script:
+        - cd /opt
+        - wget http://apache.mirrors.pair.com/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
+        - sudo tar -xvzf apache-maven-3.6.3-bin.tar.gz
+        - sudo mv apache-maven-3.6.3 maven
+        - sudo nano /etc/profile.d/mavenenv.sh
+        - export M2_HOME=/opt/maven
   
   allow_failures:
     - jdk: openjdk-ea
